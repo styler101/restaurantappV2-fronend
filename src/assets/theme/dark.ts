@@ -1,3 +1,4 @@
+import light from './light'
 export default {
   colors: {
     primary: {
@@ -18,4 +19,5 @@ export default {
       light: '#ffff',
     },
   },
+  spacing: { ...light.spacing },
 }

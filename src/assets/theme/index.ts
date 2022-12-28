@@ -20,5 +20,5 @@ const spacing = {
 export default {
   light: light,
   dark: dark,
-  spacing,
+  spacing: spacing,
 }

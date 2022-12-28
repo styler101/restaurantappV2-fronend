@@ -38,6 +38,6 @@ interface ColorProps {
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: ColorProps
-    spacings: SpacingProps
+    spacing: SpacingProps
   }
 }

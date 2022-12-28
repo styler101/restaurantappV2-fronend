@@ -4,7 +4,6 @@ import theme from '@/assets/theme'
 import GlobalStyles from '@/assets/styles/global'
 import * as S from './styles'
 export default function App() {
-  console.log(theme.light)
   return (
     <ThemeProvider theme={theme.light}>
       <S.Container>
