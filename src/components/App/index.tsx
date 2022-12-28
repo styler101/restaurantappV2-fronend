@@ -1,13 +1,16 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import theme from '@/assets/theme'
-import GlobalStyles from '@/assets/styles/global'
+import GlobalStyles from '../../assets/styles/global'
+import theme from '../../assets/theme/index'
+import { Ui } from '../../pages/Signin/ui'
+
 import * as S from './styles'
-export default function App() {
+
+export function App() {
   return (
     <ThemeProvider theme={theme.light}>
       <S.Container>
-        <h1> App </h1>
+        <Ui />
         <GlobalStyles />
       </S.Container>
     </ThemeProvider>
