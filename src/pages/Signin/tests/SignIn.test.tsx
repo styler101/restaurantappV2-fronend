@@ -8,9 +8,13 @@ describe('SignIn Component', () => {
     render(<Ui />)
   })
 
-  test('should render Splash component', () => {
+  test('Shoul render Splash Component', () => {
+    render(<Splash />)
+  })
+
+  test('Ensure the Splash Component has a heading', () => {
     const { getByRole } = render(<Splash />)
     const heading = getByRole('heading', { level: 1 })
-    expect(heading.innerHTML).toBe(' Splash Screen')
+    expect(heading).toBe(screen.getByRole('heading', { level: 1 }))
   })
 })
