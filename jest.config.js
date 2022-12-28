@@ -5,6 +5,13 @@
 
 export default {
   // diretórios
+  modulePaths: ['<rootDir>/src'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/test.{ts,tsx}',
+    '<rootDir>/src/**/spec.{ts,tsx}',
+
+    '!**/*.d.ts',
+  ],
 
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   clearMocks: true,

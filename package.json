@@ -10,8 +10,8 @@
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --passWithNoTests --no-cache  --runInBand",
-    "test:staged": "npm run test -- -- findRelatedTests"
+    "test": "jest --passWithNoTests --no-cache ",
+    "test:staged": "npm run test"
   },
   "dependencies": {
     "react": "^18.2.0",
