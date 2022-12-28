@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
 export default function App() {
-  return <h1> Restaurant App</h1>;
+  return [1, 2, 3].map((item) => item)
 }
