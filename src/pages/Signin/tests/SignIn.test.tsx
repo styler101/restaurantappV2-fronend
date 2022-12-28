@@ -17,4 +17,10 @@ describe('SignIn Component', () => {
     const heading = getByRole('heading', { level: 1 })
     expect(heading).toBe(screen.getByRole('heading', { level: 1 }))
   })
+
+  test('Ensure the heading title on splash component be igual Splash Screen', () => {
+    const { getByRole } = render(<Splash />)
+    const heading = getByRole('heading', { level: 1 })
+    expect(heading.innerHTML).toBe(' Splash Screen')
+  })
 })
