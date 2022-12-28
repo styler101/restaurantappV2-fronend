@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --passWithNoTests --no-cache ",
+    "test": "jest --no-cache  --watch",
     "test:staged": "npm run test"
   },
   "dependencies": {
