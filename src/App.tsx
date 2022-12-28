@@ -1,5 +1,11 @@
 import React from 'react'
+import GlobalStyles from '@/assets/styles/global'
 
 export default function App() {
-  return <h1>Teste</h1>
+  return (
+    <React.Fragment>
+      <h1> App </h1>
+      <GlobalStyles />
+    </React.Fragment>
+  )
 }
