@@ -21,7 +21,7 @@ export default {
   spacing: {
     xsm: '0.8rem', // 8px
     sm: '1.2rem', // 12px
-    base: '1rem', // 16px;
+    base: '1.6rem', // 16px;
     lg: '1.8rem',
     xl: '2rem',
     '2xl': '2.4rem',
