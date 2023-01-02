@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100%;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
 `
 
 export const FormContainer = styled.div`
@@ -16,7 +17,6 @@ export const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: red;
 `
 export const Form = styled.form`
   display: flex;

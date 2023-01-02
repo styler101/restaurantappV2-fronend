@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { SplashProps } from './interfaces'
 import logo from '@/assets/img/svg/logo.svg'
 import * as S from './styles'
 
-export function Splash() {
+export function Splash(props: SplashProps) {
+  const { isVisible, setIsVisible } = props
   const firstRender = useRef(true)
-  const [isVisible, setIsVisible] = useState<boolean>(false)
 
   useEffect(() => {
     setTimeout(() => {
