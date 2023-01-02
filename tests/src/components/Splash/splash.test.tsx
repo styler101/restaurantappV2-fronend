@@ -1,8 +1,7 @@
 import React from 'react'
-import { cleanup, render, screen } from '@testing-library/react'
-import { Splash } from '@/components/Splash/ui'
+import { render, screen } from '@testing-library/react'
+import { Splash } from '@/components/Splash'
 
-afterEach(cleanup)
 describe('Splash Component', () => {
   test('Should be render Splash Component', () => {
     render(<Splash />)

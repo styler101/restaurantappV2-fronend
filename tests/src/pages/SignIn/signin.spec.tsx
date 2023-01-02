@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Ui } from '@/pages/Signin/ui'
-import { Splash } from '@/components/Splash/ui'
+import { Signin } from '@/pages/Signin/index'
+import { Splash } from '@/components/Splash'
 
 describe('SignIn Component', () => {
   test('Ensure the SignIn Component be render', () => {
-    render(<Ui />)
+    render(<Signin />)
   })
 
   test('Shoul render Splash Component', () => {
