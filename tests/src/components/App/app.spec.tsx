@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { App } from './index'
-import { Ui } from '../../pages/Signin/ui'
+import { App } from '@/components/App'
+import { Signin } from '@/pages/Signin'
 
 describe('App Component', () => {
   test('Ensure the App Component be render', () => {
@@ -9,6 +9,6 @@ describe('App Component', () => {
   })
 
   test('Ensure the SignIn Component be render on App Component', () => {
-    render(<Ui />)
+    render(<Signin />)
   })
 })

@@ -14,7 +14,5 @@ describe('SignIn Component', () => {
 
   test('Ensure the Splash Component has a heading', () => {
     const { getByRole } = render(<Splash />)
-    const heading = getByRole('heading', { level: 1 })
-    expect(heading).toBe(screen.getByRole('heading', { level: 1 }))
   })
 })

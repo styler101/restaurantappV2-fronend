@@ -1,11 +1,10 @@
 import React from 'react'
-import { Splash } from '../../../components/Splash/ui'
 import * as S from './styles'
 
-export function Ui() {
+export function Input() {
   return (
     <S.Container>
-      <Splash />
+      <input type="text" />
     </S.Container>
   )
 }
