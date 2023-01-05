@@ -23,7 +23,7 @@
     },
 
   },
-  "include": ["src"],
+  "include": ["src", "tests"],
   "exclude": ["tests/e2e/cypress"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
