@@ -1,5 +1,5 @@
+import { action } from 'typesafe-actions'
+
 export function showMessage() {
-  return {
-    type: 'SHOW_MESSAGE',
-  }
+  return action('SHOW_MESSAGE')
 }
