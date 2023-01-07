@@ -1,6 +1,6 @@
 import React from 'react'
-import { FiMail } from 'react-icons/fi'
-import { UnControlledInput } from '@/components/Form/UncontrolledInput'
+
+import { Button, UnControlledInput } from '@/components/Form'
 import logo from '@/assets/img/svg/welcome.svg'
 import * as S from './styles'
 
@@ -25,6 +25,9 @@ export function Ui() {
             type: 'password',
           }}
         />
+        <Button type="submit" disabled={false}>
+          Fazer Login
+        </Button>
       </S.Form>
     </S.Container>
   )
