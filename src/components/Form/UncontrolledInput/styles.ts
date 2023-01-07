@@ -29,6 +29,9 @@ export const Divider = styled.div<DividerProps>`
   border-radius: 4px;
   justify-content: center;
 
+  svg {
+    cursor: pointer;
+  }
   input {
     border: 0;
     flex: 1;
@@ -36,6 +39,7 @@ export const Divider = styled.div<DividerProps>`
     height: 100%;
     padding: 0 8px;
     font-size: 1.6rem;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
     color: ${(props) => props.theme.colors?.secundary[400]};
     &::placeholder {
       color: ${(props) => props.theme.colors?.secundary[400]};
