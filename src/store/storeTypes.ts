@@ -1,7 +1,7 @@
-import { DefaultState, DefaultActions } from '@/store/modules/default/types'
+import { AuthActions, AuthState } from '@/store/modules/auth/types'
 
 export interface StoreState {
-  default: DefaultState
+  auth: AuthState
 }
 
-export type StoreAction = DefaultActions
+export type StoreAction = AuthActions
