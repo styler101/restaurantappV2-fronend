@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { shade } from 'polished'
 
 export const Container = styled.div`
   width: 100%;
@@ -19,8 +20,26 @@ export const Container = styled.div`
   }
 `
 
-export const Wrapper = styled.div`
+interface WrapperProps {
+  error: boolean
+}
+export const Wrapper = styled.div<WrapperProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
+  ${(props) =>
+    props.error &&
+    css`
+      label {
+        color: ${(props) => props.theme.colors.primary[400]};
+      }
+      input {
+        border-color: ${(props) => props.theme.colors.primary[400]};
+        background-color: #f4dede;
+        color: #e0b4b4;
+        &::placeholder {
+          color: #e0b4b4;
+        }
+      }
+    `}
 `

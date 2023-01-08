@@ -8,7 +8,7 @@ export function FormGroup(props: FromGroupProps) {
 
   return (
     <S.Container>
-      <S.Wrapper>{children}</S.Wrapper>
+      <S.Wrapper error={Boolean(error)}>{children}</S.Wrapper>
       {error !== undefined && <ErrorField message={error} />}
     </S.Container>
   )

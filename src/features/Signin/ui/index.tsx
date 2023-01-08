@@ -19,7 +19,7 @@ export function Ui() {
   } = useForm<SignInFields>({
     resolver: yupResolver(schema()),
     defaultValues,
-    mode: 'onBlur',
+    mode: 'all',
   })
 
   useEffect(() => {
