@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
+import { FaEye } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { FaEye } from 'react-icons/fa'
-import { ErrorField } from '@/components/Form/ErrorField'
-import { Button, UnControlledInput } from '@/components/Form'
+import { Button, FormGroup, Input } from '@/components/Form'
 import { Splash } from '@/components/Splash'
 import logo from '@/assets/img/svg/welcome.svg'
 
@@ -37,30 +36,24 @@ export function Ui() {
     <S.Container>
       <img src={logo} alt="welcome svg" />
       <S.Form onSubmit={handleSubmit(onSumbit)}>
-        <UnControlledInput
-          label="E-mail"
-          input={{
-            name: 'email',
-            placeholder: 'Seu e-mail de acesso',
-            type: 'email',
-          }}
-          register={register}
-        />
-        {errors.email?.message && <ErrorField message={errors.email.message} />}
-        <UnControlledInput
-          label="Senha"
-          icon={<FaEye color="#ccc" />}
-          renderIconOnDirection="right"
-          input={{
-            name: 'password',
-            placeholder: 'Informe sua senha',
-            type: 'password',
-          }}
-          register={register}
-        />
-        {errors.password?.message && (
-          <ErrorField message={errors.password.message} />
-        )}
+        <FormGroup error={errors.email?.message}>
+          <label> E-mail</label>
+          <Input
+            type="email"
+            placeholder=" Seu e-mail de acesso"
+            autoComplete="off"
+            {...register('email')}
+          />
+        </FormGroup>
+        <FormGroup error={errors.password?.message}>
+          <label> Senha </label>
+          <Input
+            type="password"
+            placeholder="Informe sua senha"
+            autoComplete="off"
+            {...register('password')}
+          />
+        </FormGroup>
         <Button type="submit" disabled={!isValid}>
           Fazer Login
         </Button>

@@ -4,7 +4,7 @@ export const Container = styled.span`
   display: flex;
   align-items: center;
   font-size: 1.4rem;
-  margin: 0.8rem 0;
+  padding-top: 0.8rem;
   width: 100%;
   svg {
     margin: 0;
