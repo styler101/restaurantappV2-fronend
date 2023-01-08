@@ -7,7 +7,7 @@ export function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route element={<Signin />} index />
+        <Route path="/signin" element={<Signin />} index />
         <Route path="dashboard" element={<Dashboard />} />
       </Switch>
     </BrowserRouter>
