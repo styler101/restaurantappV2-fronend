@@ -14,4 +14,9 @@ export const Input = styled.input`
   &::placeholder {
     color: ${(props) => props.theme.colors.secundary[300]};
   }
+
+  &:disabled {
+    background-color: #f3f3f3;
+    cursor: not-allowed;
+  }
 `

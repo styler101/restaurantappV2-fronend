@@ -9,6 +9,9 @@ export const Container = styled.button<ButtonProps>`
   margin-top: 1.6rem;
   height: 4.2rem;
   border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
   background-color: ${(props) => props.theme.colors?.primary[400]};
   font-weight: 700;

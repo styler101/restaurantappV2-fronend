@@ -18,3 +18,15 @@ export const moveRight = keyframes`
   opacity: 1;
  }
 `
+
+export const Rotate = keyframes`
+   to{
+    transform: rotate(360deg);
+   }
+
+   from{
+    transform: rotate(0deg);
+   }
+
+
+`
