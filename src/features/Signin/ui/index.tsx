@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Button, FormGroup, Input } from '@/components/Form'
@@ -12,6 +12,7 @@ import * as S from './styles'
 
 export function Ui() {
   const [showSplash, setShowSplash] = React.useState<boolean>(true)
+  const [maskInput, setMaskInput] = React.useState(true)
   const {
     register,
     handleSubmit,
@@ -19,7 +20,7 @@ export function Ui() {
   } = useForm<SignInFields>({
     resolver: yupResolver(schema()),
     defaultValues,
-    mode: 'all',
+    mode: 'onBlur',
   })
 
   useEffect(() => {
@@ -27,9 +28,13 @@ export function Ui() {
       clearTimeout(timer)
     }
   }, [])
+
   const timer = setTimeout(() => setShowSplash(false), 1000)
   const onSumbit = (data: SignInFields) => console.log(data)
 
+  function handleToogle(value: boolean) {
+    setMaskInput(value)
+  }
   return showSplash ? (
     <Splash />
   ) : (
@@ -48,11 +53,20 @@ export function Ui() {
         <FormGroup error={errors.password?.message}>
           <label> Senha </label>
           <Input
-            type="password"
+            type={maskInput ? 'password' : 'text'}
             placeholder="Informe sua senha"
             autoComplete="off"
             {...register('password')}
           />
+          {maskInput ? (
+            <button type="button" onClick={() => handleToogle(false)}>
+              <FiEye color="#c8c8c8" />
+            </button>
+          ) : (
+            <button type="button" onClick={() => handleToogle(true)}>
+              <FiEyeOff color="#c8c8c8" />
+            </button>
+          )}
         </FormGroup>
         <Button type="submit" disabled={!isValid}>
           Fazer Login

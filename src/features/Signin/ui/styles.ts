@@ -28,11 +28,3 @@ export const Form = styled.form`
     margin: 0 8px;
   }
 `
-
-export const LabelError = styled.span`
-  display: block;
-  font-size: 1.4rem;
-  margin: 0.8rem;
-  width: 100%;
-  color: ${(props) => props.theme.colors.primary[400]};
-`

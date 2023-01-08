@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { shade } from 'polished'
 
 export const Container = styled.div`
   width: 100%;
@@ -42,4 +41,20 @@ export const Wrapper = styled.div<WrapperProps>`
         }
       }
     `}
+
+  position:relative;
+  input {
+    position: relative;
+  }
+
+  button {
+    height: 100%;
+    border: 0;
+    height: 42px;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+  }
 `
