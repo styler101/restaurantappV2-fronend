@@ -19,7 +19,10 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+
+  button {
+    margin-top: 2.6rem;
+  }
 
   svg {
     margin: 0 8px;
