@@ -7,7 +7,7 @@ export default (reducers: Reducer) => {
     {
       key: 'waiterapp',
       storage,
-      whitelist: [],
+      whitelist: ['auth'],
     },
     reducers
   )

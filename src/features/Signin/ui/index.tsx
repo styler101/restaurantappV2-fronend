@@ -24,6 +24,7 @@ export function Ui() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isValid },
   } = useForm<SignInFields>({
     resolver: yupResolver(schema()),
@@ -38,8 +39,9 @@ export function Ui() {
   }, [])
 
   const timer = setTimeout(() => setShowSplash(false), 1000)
-  const onSumbit = ({ email, password }: SignInFields) => {
-    dispatch(actions.signInRequest({ email, password }))
+  const onSumbit = async ({ email, password }: SignInFields) => {
+    await dispatch(actions.signInRequest({ email, password }))
+    reset()
   }
 
   function handleToogle(value: boolean) {

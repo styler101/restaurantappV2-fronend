@@ -5,12 +5,24 @@ interface SignInRequest {
   password: string
 }
 
+interface SignInRequestSucess {
+  accessToken: string
+  _id: string
+  name: string
+  email: string
+}
+
 export function signInRequest({ email, password }: SignInRequest) {
   return action(types.request, { email, password })
 }
 
-export function signInRequestSuccess() {
-  return action(types.success)
+export function signInRequestSuccess({
+  _id,
+  accessToken,
+  email,
+  name,
+}: SignInRequestSucess) {
+  return action(types.success, { _id, accessToken, email, name })
 }
 
 export function signInRequestFailure() {

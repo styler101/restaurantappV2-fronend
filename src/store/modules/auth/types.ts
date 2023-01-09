@@ -4,15 +4,15 @@ import { ActionType } from 'typesafe-actions'
 export type AuthActions = ActionType<typeof actions>
 
 interface AuthenticatedUserData {
-  _id: string
-  name: string
-  email: string
+  _id: string | null
+  name: string | null
+  email: string | null
 }
 
 export interface AuthState {
   loading: boolean
   accessToken: string | null
-  user: AuthenticatedUserData | null
+  user: AuthenticatedUserData
 }
 
 export const types = {
