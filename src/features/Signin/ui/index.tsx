@@ -1,26 +1,27 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useCallback, useEffect } from 'react'
+
 import { FiEye, FiEyeOff } from 'react-icons/fi'
+import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import logo from '@/assets/img/svg/welcome.svg'
 
 import { Button, FormGroup, Input } from '@/components/Form'
 import { Spinner } from '@/components/Spinner'
-import { StoreState } from '@/store/storeTypes'
 import { Splash } from '@/components/Splash'
 import { SignInFields } from '../interfaces'
+import { signInRequest as request } from '../services'
 
 import schema, { defaultValues } from '../schema'
-import * as actions from '@/store/modules/auth/actions'
 import * as S from './styles'
+import { useNavigate } from 'react-router-dom'
 
 export function Ui() {
-  const dispatch = useDispatch()
-  const { loading } = useSelector((state: StoreState) => state.auth)
-
+  const navigate = useNavigate()
   const [showSplash, setShowSplash] = React.useState<boolean>(true)
-  const [maskInput, setMaskInput] = React.useState(true)
+  const [maskInput, setMaskInput] = React.useState<boolean>(true)
+  const [loading, setLoading] = React.useState<boolean>(false)
+
   const {
     register,
     handleSubmit,
@@ -33,16 +34,26 @@ export function Ui() {
   })
 
   useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 1000)
     return () => {
       clearTimeout(timer)
     }
   }, [])
-
-  const timer = setTimeout(() => setShowSplash(false), 1000)
-  const onSumbit = async ({ email, password }: SignInFields) => {
-    await dispatch(actions.signInRequest({ email, password }))
-    reset()
-  }
+  const onSumbit = useCallback(async (data: SignInFields) => {
+    setLoading(true)
+    try {
+      const { email, password } = data
+      const { data: responseData } = await request({ email, password })
+      localStorage.setItem('@waiterapp:user', JSON.stringify(responseData))
+      toast.success('Usuário Autenticado!')
+      navigate('/dashboard')
+    } catch (error) {
+      toast.error('Crendenciais Invalidas!')
+    } finally {
+      setLoading(false)
+      reset()
+    }
+  }, [])
 
   function handleToogle(value: boolean) {
     setMaskInput(value)

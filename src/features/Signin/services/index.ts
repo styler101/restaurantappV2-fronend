@@ -4,7 +4,7 @@ import { SignInFields, HttpResponse } from '../interfaces'
 export const signInRequest = async ({
   email,
   password,
-}: SignInFields): Promise<any> => {
+}: SignInFields): Promise<HttpResponse> => {
   const { data } = await axios.post('/signin', {
     email,
     password,
