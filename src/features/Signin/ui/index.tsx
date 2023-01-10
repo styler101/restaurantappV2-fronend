@@ -66,6 +66,7 @@ export function Ui() {
           <label htmlFor="email"> E-mail</label>
           <Input
             type="email"
+            id="email"
             placeholder="Email"
             autoComplete="off"
             {...register('email')}
@@ -75,6 +76,7 @@ export function Ui() {
         <FormGroup error={errors.password?.message}>
           <label htmlFor="password"> Senha </label>
           <Input
+            id="password"
             type={maskInput ? 'password' : 'text'}
             placeholder="Informe sua senha"
             autoComplete="off"

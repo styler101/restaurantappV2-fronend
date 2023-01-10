@@ -13,12 +13,13 @@ jest.mock('react-router-dom', () => ({
 describe('SignIn Component', () => {
   test('should be provided the valid email', async () => {
     render(<Ui />)
-    const fakeEmail = 'any_mail@mail.com'
-    const email = fireEvent.input(screen.getByRole('textbox'), {
-      target: { value: 'Test recipe' },
+    const fakeEmail = 'any_fakemail@mail.com'
+    const email = fireEvent.input(screen.getByPlaceholderText(/email/i), {
+      target: {
+        value: 'any_email@mail.com',
+      },
     })
-    expect(email).toBe(validEmail(fakeEmail))
 
-    // expect(validEmail(email.in)).toBe(validEmail(fakeEmail))
+    expect(email).toEqual(validEmail(fakeEmail))
   })
 })
