@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { ThemeProvider } from 'styled-components'
 import { Routes } from '@/routes'
@@ -8,7 +9,9 @@ import theme from '@/assets/theme'
 export function App() {
   return (
     <ThemeProvider theme={theme.light}>
-      <Routes />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
       <ToastContainer
         position="top-right"
         autoClose={3000}

@@ -39,43 +39,41 @@ export function Ui() {
       clearTimeout(timer)
     }
   }, [])
-  const onSumbit = useCallback(async (data: SignInFields) => {
+  const onSumbit = useCallback(async ({ email, password }: SignInFields) => {
     setLoading(true)
     try {
-      const { email, password } = data
-      const { data: responseData } = await request({ email, password })
-      localStorage.setItem('@waiterapp:user', JSON.stringify(responseData))
-      toast.success('Usuário Autenticado!')
-      navigate('/dashboard')
+      // const user = await request({ email, password })
+      // localStorage.setItem('@waiterapp:user', JSON.stringify(user))
+      // toast.success('Usuário Autenticado!')
+      // navigate('/dashboard')
+      // reset()
     } catch (error) {
       toast.error('Crendenciais Invalidas!')
     } finally {
       setLoading(false)
-      reset()
     }
   }, [])
 
   function handleToogle(value: boolean) {
     setMaskInput(value)
   }
-  return showSplash ? (
-    <Splash />
-  ) : (
+
+  return (
     <S.Container>
       <img src={logo} alt="welcome svg" />
       <S.Form onSubmit={handleSubmit(onSumbit)}>
         <FormGroup error={errors.email?.message}>
-          <label> E-mail</label>
+          <label htmlFor="email"> E-mail</label>
           <Input
             type="email"
-            placeholder=" Seu e-mail de acesso"
+            placeholder="Email"
             autoComplete="off"
             {...register('email')}
             disabled={loading}
           />
         </FormGroup>
         <FormGroup error={errors.password?.message}>
-          <label> Senha </label>
+          <label htmlFor="password"> Senha </label>
           <Input
             type={maskInput ? 'password' : 'text'}
             placeholder="Informe sua senha"

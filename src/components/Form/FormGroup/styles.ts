@@ -10,12 +10,12 @@ export const Container = styled.div`
     padding: 0 0.8rem !important;
   }
   & + div {
-    margin-top: ${(props) => props.theme.spacing.base};
+    margin-top: ${(props) => props.theme.spacing?.base};
   }
 
   label {
     font-size: 1.4rem;
-    color: ${(props) => props.theme.colors.secundary[300]};
+    color: ${(props) => props.theme.colors?.secundary[300]};
   }
 `
 
@@ -30,10 +30,10 @@ export const Wrapper = styled.div<WrapperProps>`
     props.error &&
     css`
       label {
-        color: ${(props) => props.theme.colors.primary[400]};
+        color: ${(props) => props.theme.colors?.primary[400]};
       }
       input {
-        border-color: ${(props) => props.theme.colors.primary[400]};
+        border-color: ${(props) => props.theme.colors?.primary[400]};
         background-color: #f4dede;
         color: #e0b4b4;
         &::placeholder {
