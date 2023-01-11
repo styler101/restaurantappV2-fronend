@@ -9,6 +9,7 @@ export const Input = styled.input`
   border-radius: 0.4rem;
   font-size: 1.5rem;
   font-weight: 400;
+  z-index: 999999 !important;
 
   color: ${(props) => props.theme.colors?.secundary[300]};
   &::placeholder {

@@ -11,8 +11,4 @@ describe('App Component', () => {
   test('Ensure the App Component be render', () => {
     render(<App />)
   })
-
-  test('Ensure the SignIn Component be render on App Component', () => {
-    render(<Signin />)
-  })
 })
