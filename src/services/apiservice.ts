@@ -6,9 +6,9 @@ const baseUrl = axios.create({
 
 axios.defaults.headers['Content-Type'] = 'application/json'
 axios.defaults.headers['Accept'] = 'application/json'
-const storagedData = JSON.parse(localStorage.getItem('@waiterapp:user')!)
+const storagedData = JSON.parse(localStorage.getItem('@waiterapp:user') || '{}')
 
-if (storagedData !== undefined) {
+if (storagedData !== undefined || storagedData.token) {
   const { accessToken } = storagedData
   axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`
 }

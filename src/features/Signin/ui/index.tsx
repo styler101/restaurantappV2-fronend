@@ -42,11 +42,11 @@ export function Ui() {
   const onSumbit = useCallback(async ({ email, password }: SignInFields) => {
     setLoading(true)
     try {
-      // const user = await request({ email, password })
-      // localStorage.setItem('@waiterapp:user', JSON.stringify(user))
-      // toast.success('Usuário Autenticado!')
-      // navigate('/dashboard')
-      // reset()
+      const user = await request({ email, password })
+      localStorage.setItem('@waiterapp:user', JSON.stringify(user))
+      toast.success('Usuário Autenticado!')
+      navigate('/home')
+      reset()
     } catch (error) {
       toast.error('Crendenciais Invalidas!')
     } finally {

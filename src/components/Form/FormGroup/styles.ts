@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   margin-top: 1rem;
   input {
-    height: 42px;
+    height: 4.2rem;
     padding: 0 0.8rem !important;
   }
   & + div {
