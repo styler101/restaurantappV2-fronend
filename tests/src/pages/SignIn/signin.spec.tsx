@@ -32,4 +32,16 @@ describe('SignIn Component', () => {
     )
     expect(password).not.toBe(false)
   })
+
+  test('should enabled the button after all fields are valid', async () => {
+    render(<Ui />)
+    await userEvent.type(
+      screen.getByPlaceholderText(/email/i),
+      'any_email@mail.com'
+    )
+    await userEvent.type(screen.getByPlaceholderText(/ senha/i), 'any_password')
+    const button = await screen.findByRole('button', { name: /fazer login/i })
+
+    expect(button.getAttribute('disabled')).toBeNull()
+  })
 })
