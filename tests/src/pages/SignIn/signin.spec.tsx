@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { Ui } from '@/features/Signin/ui'
-import { get } from 'react-hook-form'
 
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
