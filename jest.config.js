@@ -14,6 +14,7 @@ export default {
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/tests/e2e/cypress',
+    '<rootDir>/src/services/apiservice.ts',
   ],
   transform: {
     '.+\\.(ts|tsx)$': 'ts-jest',
