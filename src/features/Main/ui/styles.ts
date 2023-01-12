@@ -10,5 +10,6 @@ export const Container = styled.div`
 `
 export const Wrapper = styled.div`
   flex: 1;
-  padding: 1rem;
+  padding: 3.5rem;
+  background-color: #cccccc66;
 `
