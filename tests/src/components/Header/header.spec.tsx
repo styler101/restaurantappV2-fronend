@@ -11,4 +11,13 @@ describe('Header Component', () => {
     }
     render(<Header data={fakeProps} />)
   })
+
+  test('Ensure the header componente recieve a description', () => {
+    const fakeProps = {
+      title: 'any_title',
+      description: 'any_description',
+      icon: 'fake_icon',
+    }
+    render(<Header data={fakeProps} />)
+  })
 })
