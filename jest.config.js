@@ -12,9 +12,10 @@ export default {
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: [
-    '<rootDir>/node_modules/',
+    '<rootDir>/node_modules',
     '<rootDir>/tests/e2e/cypress',
     '<rootDir>/src/services/apiservice.ts',
+    `<rootDir>/node_modules/(?!axios)/`,
   ],
   transform: {
     '.+\\.(ts|tsx)$': 'ts-jest',
@@ -25,5 +26,6 @@ export default {
     '@/tests/(.*)': '<rootDir>/tests/$1',
     '@/(.*)': '<rootDir>/src/$1',
     '.+\\.(svg|png|jpg)$': 'identity-obj-proxy',
+    axios: 'axios/dist/node/axios.cjs',
   },
 }
