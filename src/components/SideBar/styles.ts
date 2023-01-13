@@ -18,7 +18,6 @@ export const List = styled.ul`
   align-items: center;
   justify-content: space-evenly;
   margin: 3.2rem 0;
-  min-height: 432px;
 `
 
 export const ListItem = styled.li`
@@ -53,8 +52,8 @@ export const ListItem = styled.li`
 `
 
 export const Footer = styled.footer`
-  min-height: 232px;
   width: 100%;
+  height: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;

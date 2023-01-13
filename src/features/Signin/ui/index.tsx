@@ -77,7 +77,7 @@ export function Ui() {
           <label htmlFor="password"> Senha </label>
           <Input
             id="password"
-            type={'password'}
+            type={maskInput ? 'password' : 'text'}
             placeholder="Informe sua senha"
             autoComplete="off"
             {...register('password')}
