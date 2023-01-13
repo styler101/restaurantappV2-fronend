@@ -1,40 +1,27 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import homeLogo from '@/assets/img/svg/home.svg'
-import historicLogo from '@/assets/img/svg/historic.svg'
-import menuLogo from '@/assets/img/svg/menu.svg'
-import logoText from '@/assets/img/svg/logotext.svg'
-import usersLogo from '@/assets/img/svg/group.svg'
+import { ComponentProps } from './interfaces'
+import homeLogo from '@/assets/img/svg/logotext.svg'
 import profileLogo from '@/assets/img/svg/profile.svg'
 import powerOff from '@/assets/img/svg/poweroff.svg'
-
 import * as S from './styles'
 
-export function SideBar() {
+export function SideBar(props: ComponentProps) {
   const navigate = useNavigate()
+  const { options } = props
   return (
     <S.Container>
       <header>
-        <img src={logoText} alt="logo text" />
+        <img src={homeLogo} alt="logo text" />
       </header>
       <S.List>
-        <S.ListItem>
-          <img src={homeLogo} alt="logo" />
-          <span> Home</span>
-          <div />
-        </S.ListItem>
-        <S.ListItem onClick={() => navigate('/home/records')}>
-          <img src={historicLogo} alt="historic logo" />
-          <span> Histórico </span>
-        </S.ListItem>
-        <S.ListItem>
-          <img src={menuLogo} alt="menu historic" />
-          <span> Cardapio </span>
-        </S.ListItem>
-        <S.ListItem>
-          <img src={usersLogo} alt="group" />
-          <span> Usuários </span>
-        </S.ListItem>
+        {options.map((item, index) => (
+          <S.ListItem key={index} onClick={() => navigate(item.pathName)}>
+            {item.icon()}
+            <span> {item.title}</span>
+            <div />
+          </S.ListItem>
+        ))}
       </S.List>
       <S.Footer>
         <S.ListItem>
