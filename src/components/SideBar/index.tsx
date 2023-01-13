@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import homeLogo from '@/assets/img/svg/home.svg'
 import historicLogo from '@/assets/img/svg/historic.svg'
 import menuLogo from '@/assets/img/svg/menu.svg'
@@ -10,6 +11,7 @@ import powerOff from '@/assets/img/svg/poweroff.svg'
 import * as S from './styles'
 
 export function SideBar() {
+  const navigate = useNavigate()
   return (
     <S.Container>
       <header>
@@ -21,7 +23,7 @@ export function SideBar() {
           <span> Home</span>
           <div />
         </S.ListItem>
-        <S.ListItem>
+        <S.ListItem onClick={() => navigate('/home/records')}>
           <img src={historicLogo} alt="historic logo" />
           <span> Histórico </span>
         </S.ListItem>

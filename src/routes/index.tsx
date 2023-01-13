@@ -5,6 +5,7 @@ import { Signin } from '@/pages/Signin'
 import { Route as PrivateRoute } from '@/utils/PrivateRoute'
 import { Main } from '@/pages/Main'
 import { Dashboard } from '@/pages/Dashboard'
+import { Records } from '@/pages/Records'
 export function Routes() {
   return (
     <Switch>
@@ -17,6 +18,7 @@ export function Routes() {
           </PrivateRoute>
         }>
         <Route index element={<Dashboard />} />
+        <Route path="records" element={<Records />} />
       </Route>
     </Switch>
   )
