@@ -7,10 +7,10 @@ export function Header(props: HeaderProps) {
   return (
     <S.Container>
       <header>
-        <div>
+        <S.LeftContent>
           {icon}
           <h2> {title} </h2>
-        </div>
+        </S.LeftContent>
         {extraTitleContent}
       </header>
       <p> {description}</p>

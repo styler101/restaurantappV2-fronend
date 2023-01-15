@@ -18,7 +18,7 @@ const options: SideBarProps[] = [
       ) : (
         <img src={homeLogo} alt="home logo" />
       ),
-    pathName: '/home/records',
+    pathName: '/home',
   },
 
   {

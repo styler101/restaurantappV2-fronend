@@ -41,14 +41,17 @@ export const ListItem = styled.li<ActiveItem>`
 
   span {
     display: block;
-    margin-top: 0.8rem;
+    padding: 0.4rem 0;
     font-size: 1.4rem;
     line-height: 140%;
     color: ${(props) => props.theme.colors.secundary[600]};
   }
 
   div {
-    margin-top: 0.4rem;
+    width: 2.6rem;
+    height: 2px;
+    background-color: transparent;
+    margin-top: 0.8rem;
   }
 
   ${(props) =>
@@ -59,8 +62,6 @@ export const ListItem = styled.li<ActiveItem>`
       }
 
       div {
-        width: 2.6rem;
-        height: 2px;
         background-color: ${(props) => props.theme.colors?.primary[400]};
         transition: all 1.5s ease-out;
       }
