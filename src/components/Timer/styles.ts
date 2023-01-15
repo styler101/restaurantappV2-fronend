@@ -12,8 +12,8 @@ export const Container = styled.div`
 `
 
 export const Item = styled.div`
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background-color: rgba(255, 255, 255, 0.1);
   font-family: 'Orbitron', arial;
   border-radius: 4px;

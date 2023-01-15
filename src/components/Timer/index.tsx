@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react'
-
+import React from 'react'
+import {
+  getCurrentTimeString,
+  getHoursAndMinutesToSomeHour,
+} from '@/utils/Formatters/date'
 import * as S from './styles'
-import moment from 'moment'
 
 export function Timer() {
-  let time = new Date().toLocaleTimeString()
+  let time = getCurrentTimeString()
   const [currentTime, setCurrentTime] = React.useState<string>(time)
+  const [hours, minutes] = getHoursAndMinutesToSomeHour(currentTime)
 
   function updateTime() {
     let time = new Date().toLocaleTimeString()
     setCurrentTime(time)
   }
-
   setInterval(updateTime, 1000)
-  const [hours, minutes, seconds] = currentTime.split(':')
+
   return (
     <S.Container>
       <S.Item> {hours[0]}</S.Item>

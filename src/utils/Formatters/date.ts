@@ -1,11 +1,9 @@
-import moment from 'moment'
-export function realTimeFormat(): any {
-  const currentTime = new Date()
-  let parsedTime: any
-  const timer = setInterval(() => {
-    parsedTime = moment(currentTime).format('HH:mm')
-    return parsedTime
-  }, 1000)
+export function getCurrentTimeString(): string {
+  const date = new Date().toLocaleTimeString()
+  return date
+}
 
-  return timer
+export function getHoursAndMinutesToSomeHour(date: string): string[] {
+  const [hours, minutes] = date.split(':')
+  return [hours, minutes]
 }
