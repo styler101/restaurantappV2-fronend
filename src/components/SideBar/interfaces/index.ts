@@ -1,5 +1,5 @@
 export interface SideBarProps {
-  icon: () => JSX.Element
+  icon: (isChecked: boolean) => JSX.Element
   title: string
   pathName: string
 }

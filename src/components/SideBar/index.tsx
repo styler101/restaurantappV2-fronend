@@ -26,7 +26,7 @@ export function SideBar(props: ComponentProps) {
             key={index}
             active={activeItem === index}
             onClick={() => handleActiveItem(index, item.pathName)}>
-            {item.icon()}
+            {item.icon(activeItem === index)}
             <span> {item.title}</span>
             <div />
           </S.ListItem>
