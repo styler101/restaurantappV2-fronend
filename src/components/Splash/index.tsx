@@ -1,11 +1,11 @@
 import React from 'react'
-import { Splash } from '../../../components/Splash/ui'
+import logo from '@/assets/img/svg/logo.svg'
 import * as S from './styles'
 
-export function Ui() {
+export function Splash() {
   return (
     <S.Container>
-      <Splash />
+      <img src={logo} alt="logo" />
     </S.Container>
   )
 }

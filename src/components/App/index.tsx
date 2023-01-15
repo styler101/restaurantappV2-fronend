@@ -1,18 +1,29 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import { ThemeProvider } from 'styled-components'
-import GlobalStyles from '../../assets/styles/global'
-import theme from '../../assets/theme/index'
-import { Ui } from '../../pages/Signin/ui'
-
-import * as S from './styles'
+import { Routes } from '@/routes'
+import GlobalStyles from '@/assets/styles/global'
+import theme from '@/assets/theme'
 
 export function App() {
   return (
     <ThemeProvider theme={theme.light}>
-      <S.Container>
-        <Ui />
-        <GlobalStyles />
-      </S.Container>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
+        theme="light"
+      />
+
+      <GlobalStyles />
     </ThemeProvider>
   )
 }

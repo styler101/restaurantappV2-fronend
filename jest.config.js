@@ -1,29 +1,31 @@
-/*
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
-
 export default {
-  // diretórios
+  // Diretório raiz
+  // Foi adicionado dois caminhos no tsconfig tanto para a pasta src como a pasta de tests.
   modulePaths: ['<rootDir>/src'],
+  roots: ['<rootDir>/src', '<rootDir>/tests'],
   collectCoverageFrom: [
-    '<rootDir>/src/**/test.{ts,tsx}',
-    '<rootDir>/src/**/spec.{ts,tsx}',
-
-    '!**/*.d.ts',
+    '<rootDir>/tests/**/*.{ts,tsx}',
+    '!<rootDir>src/main.tsx',
   ],
-
-  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   clearMocks: true,
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  testEnvironment: 'jsdom',
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules',
+    '<rootDir>/tests/e2e/cypress',
+    '<rootDir>/src/services/apiservice.ts',
+    `<rootDir>/node_modules/(?!axios)/`,
+  ],
   transform: {
     '.+\\.(ts|tsx)$': 'ts-jest',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/filetransformer.js',
   },
-  collectCoverage: true,
-
-  coverageDirectory: 'coverage',
-
-  coverageProvider: 'v8',
-
-  testEnvironment: 'jsdom',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  moduleNameMapper: {
+    '@/tests/(.*)': '<rootDir>/tests/$1',
+    '@/(.*)': '<rootDir>/src/$1',
+    '.+\\.(svg|png|jpg)$': 'identity-obj-proxy',
+    axios: 'axios/dist/node/axios.cjs',
+  },
 }
