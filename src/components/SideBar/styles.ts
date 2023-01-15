@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   padding: 3.5rem;
@@ -20,7 +20,11 @@ export const List = styled.ul`
   margin: 3.2rem 0;
 `
 
-export const ListItem = styled.li`
+interface ActiveItem {
+  active?: boolean
+}
+
+export const ListItem = styled.li<ActiveItem>`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -44,11 +48,23 @@ export const ListItem = styled.li`
   }
 
   div {
-    width: 2.3rem;
-    margin-top: 0.8rem;
-    height: 2px;
-    background-color: ${(props) => props.theme.colors?.primary[400]};
+    margin-top: 0.4rem;
   }
+
+  ${(props) =>
+    props.active &&
+    css`
+      span {
+        color: ${(props) => props.theme.colors?.primary[400]};
+      }
+
+      div {
+        width: 2.6rem;
+        height: 2px;
+        background-color: ${(props) => props.theme.colors?.primary[400]};
+        transition: all 1.5s ease-out;
+      }
+    `}
 `
 
 export const Footer = styled.footer`

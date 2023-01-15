@@ -7,8 +7,14 @@ import powerOff from '@/assets/img/svg/poweroff.svg'
 import * as S from './styles'
 
 export function SideBar(props: ComponentProps) {
-  const navigate = useNavigate()
   const { options } = props
+  const navigate = useNavigate()
+  const [activeItem, setActiveItem] = React.useState<number>(0)
+
+  function handleActiveItem(index: number, pathName: string): void {
+    navigate(pathName)
+    setActiveItem(index)
+  }
   return (
     <S.Container>
       <header>
@@ -16,7 +22,10 @@ export function SideBar(props: ComponentProps) {
       </header>
       <S.List>
         {options.map((item, index) => (
-          <S.ListItem key={index} onClick={() => navigate(item.pathName)}>
+          <S.ListItem
+            key={index}
+            active={activeItem === index}
+            onClick={() => handleActiveItem(index, item.pathName)}>
             {item.icon()}
             <span> {item.title}</span>
             <div />
