@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ComponentProps } from './interfaces'
-import homeLogo from '@/assets/img/svg/logotext.svg'
-import profileLogo from '@/assets/img/svg/profile.svg'
-import powerOff from '@/assets/img/svg/poweroff.svg'
+import homeLogo from '@/assets/img/svg/sidebar/logotext.svg'
+import profileLogo from '@/assets/img/svg/sidebar/profile.svg'
+import powerOff from '@/assets/img/svg/sidebar/poweroff.svg'
 import * as S from './styles'
 
 export function SideBar(props: ComponentProps) {

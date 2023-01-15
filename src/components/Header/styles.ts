@@ -22,3 +22,8 @@ export const LeftContent = styled.div`
     font-size: 2.4rem;
   }
 `
+
+export const RightContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`
