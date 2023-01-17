@@ -7,7 +7,6 @@ import mock from '../data/index.json'
 import * as S from './styles'
 
 export function Ui() {
-  console.log(mock.data.filter((item) => item.type === 'WAITING'))
   return (
     <S.Container>
       <Header
@@ -19,18 +18,20 @@ export function Ui() {
         }}
       />
       <Container>
-        <Board
-          type="WAITING"
-          cards={mock.data.filter((item) => item.type === 'WAITING')}
-        />
-        <Board
-          type="IN_PROGRESS"
-          cards={mock.data.filter((item) => item.type === 'IN_PROGRESS')}
-        />
-        <Board
-          type="DONE"
-          cards={mock.data.filter((item) => item.type === 'DONE')}
-        />
+        <S.Wrapper>
+          <Board
+            type="WAITING"
+            cards={mock.data.filter((item) => item.type === 'WAITING')}
+          />
+          <Board
+            type="IN_PROGRESS"
+            cards={mock.data.filter((item) => item.type === 'IN_PROGRESS')}
+          />
+          <Board
+            type="DONE"
+            cards={mock.data.filter((item) => item.type === 'DONE')}
+          />
+        </S.Wrapper>
       </Container>
     </S.Container>
   )
