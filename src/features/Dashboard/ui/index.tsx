@@ -1,17 +1,13 @@
 import React from 'react'
 import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
-
-import timeLogo from '@/assets/img/svg/dashboard/clock.svg'
-import chef from '@/assets/img/svg/dashboard/cozinhando.svg'
-import check from '@/assets/img/svg/dashboard/check.svg'
+import { Board } from '../components/Board'
 import homeLogo from '@/assets/img/svg/header/customhome.svg'
-
-import { orders } from '@/data/orders'
-import { Card } from '../components/Card'
+import mock from '../data/index.json'
 import * as S from './styles'
 
 export function Ui() {
+  console.log(mock.data.filter((item) => item.type === 'WAITING'))
   return (
     <S.Container>
       <Header
@@ -23,56 +19,18 @@ export function Ui() {
         }}
       />
       <Container>
-        <S.Wrapper>
-          <S.Kanban>
-            <header>
-              <img src={timeLogo} alt="time" />
-              <strong>
-                Fila de Espera <span> {orders.length}</span>
-              </strong>
-            </header>
-            <S.CardsWrapper>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-            </S.CardsWrapper>
-          </S.Kanban>
-          <S.Kanban>
-            <header>
-              <img src={chef} alt="time" />
-              <strong>
-                Em Produção <span> 1</span>
-              </strong>
-            </header>
-          </S.Kanban>
-          <S.Kanban>
-            <header>
-              <img src={check} alt="time" />
-              <strong>
-                {' '}
-                Pronto <span> 1</span>
-              </strong>
-            </header>
-          </S.Kanban>
-        </S.Wrapper>
+        <Board
+          type="WAITING"
+          cards={mock.data.filter((item) => item.type === 'WAITING')}
+        />
+        <Board
+          type="IN_PROGRESS"
+          cards={mock.data.filter((item) => item.type === 'IN_PROGRESS')}
+        />
+        <Board
+          type="DONE"
+          cards={mock.data.filter((item) => item.type === 'DONE')}
+        />
       </Container>
     </S.Container>
   )

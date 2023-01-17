@@ -1,11 +1,13 @@
 import React from 'react'
+import { CardProps, ComponentProps } from './interfaces'
 import * as S from './styled'
 
-export function Card() {
+export function Card(props: ComponentProps) {
+  const { name, quantity } = props.data
   return (
     <S.Container>
-      <strong> Mesa 2 </strong>
-      <span> 2 itens</span>
+      <strong> {name} </strong>
+      <span> {quantity} itens</span>
     </S.Container>
   )
 }
