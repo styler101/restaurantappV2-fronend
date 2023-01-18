@@ -1,4 +1,5 @@
 import React from 'react'
+import { DragDropContext } from 'react-beautiful-dnd'
 import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
 import { Board } from '../components/Board'
@@ -19,18 +20,22 @@ export function Ui() {
       />
       <Container>
         <S.Wrapper>
-          <Board
-            type="WAITING"
-            cards={mock.data.filter((item) => item.type === 'WAITING')}
-          />
-          <Board
-            type="IN_PROGRESS"
-            cards={mock.data.filter((item) => item.type === 'IN_PROGRESS')}
-          />
-          <Board
-            type="DONE"
-            cards={mock.data.filter((item) => item.type === 'DONE')}
-          />
+          <DragDropContext onDragEnd={() => {}}>
+            <Board
+              type="WAITING"
+              cards={mock.data.filter((item) => item.type === 'WAITING')}
+            />
+            <Board
+              type="IN_PROGRESS"
+              cards={
+                mock.data.filter((item) => item.type === 'IN_PROGRESS') || []
+              }
+            />
+            <Board
+              type="DONE"
+              cards={mock.data.filter((item) => item.type === 'DONE') || []}
+            />
+          </DragDropContext>
         </S.Wrapper>
       </Container>
     </S.Container>

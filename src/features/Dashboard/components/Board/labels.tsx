@@ -24,3 +24,9 @@ export const labels: {
     icon: <img src={check} alt="check icon" />,
   },
 }
+
+export const options = {
+  WAITING: 1,
+  IN_PROGRESS: 2,
+  DONE: 3,
+}

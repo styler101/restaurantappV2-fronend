@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoMdNotificationsOutline } from 'react-icons/io'
 import homeLogo from '@/assets/img/svg/sidebar/home.svg'
 import redHomeLogo from '@/assets/img/svg/sidebar/redhome.svg'
 import historicLogo from '@/assets/img/svg/sidebar/historic.svg'
@@ -50,6 +51,16 @@ const options: SideBarProps[] = [
         <img src={redUsers} alt="users logo" />
       ) : (
         <img src={usersLogo} alt="users logo" />
+      ),
+    pathName: '/home/records',
+  },
+  {
+    title: 'Notificações',
+    icon: (isChecked: boolean) =>
+      isChecked ? (
+        <IoMdNotificationsOutline size={18} color="#D73035" />
+      ) : (
+        <IoMdNotificationsOutline size={18} color="#666666" />
       ),
     pathName: '/home/records',
   },

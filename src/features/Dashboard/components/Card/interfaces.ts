@@ -1,3 +1,4 @@
+import { DraggableProvided } from 'react-beautiful-dnd'
 export interface CardProps {
   type: string
   id: number
@@ -6,6 +7,7 @@ export interface CardProps {
 }
 
 export interface ComponentProps {
+  provided: DraggableProvided
   data: {
     type: string
     id: number
