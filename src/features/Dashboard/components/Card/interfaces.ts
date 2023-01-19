@@ -7,11 +7,12 @@ export interface CardProps {
 }
 
 export interface ComponentProps {
-  provided: DraggableProvided
+  // foi necessário alterar o tipo do provided para a realização dos testes
+  provided: DraggableProvided | any
   data: {
     type: string
     id: number
-    name: string
+    name: string | null
     quantity: number
   }
 }

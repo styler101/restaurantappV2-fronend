@@ -32,4 +32,18 @@ describe('Board Component', () => {
     )
     expect(typeOptions).toContain(mockData.type)
   })
+
+  test('Ensure that board component be render with no cards itens', () => {
+    const typeOptions = makeOptions()
+    const mockData: any = {
+      type: typeOptions[0],
+      cards: [],
+    }
+    render(
+      <DragDropContext onDragEnd={() => {}}>
+        <Board data={mockData} />
+      </DragDropContext>
+    )
+    expect(mockData.cards.length).toEqual(0)
+  })
 })
