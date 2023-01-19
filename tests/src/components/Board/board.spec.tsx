@@ -1,39 +1,35 @@
 import React from 'react'
-import { DragDropContext } from 'react-beautiful-dnd'
 import { render } from '@testing-library/react'
+import { DragDropContext } from 'react-beautiful-dnd'
 import { Board } from '@/features/Dashboard/components/Board'
-import { BoardType } from '@/features/Dashboard/components/Board/interface'
-import 'react-beautiful-dnd'
+
+const makeOptions = () => ['WAITING', 'IN_PROGRESS', 'DONE']
+
+const makeMock = () => ({
+  type: 'DONE',
+  cards: [{ id: 1, type: 'string', name: 'string', quantity: 0 }],
+})
 
 describe('Board Component', () => {
   test('Ensure that board component be render correctly', () => {
-    const mockData: BoardType = {
-      data: {
-        type: 'DONE',
-        cards: [{ id: 1, type: 'string', name: 'string', quantity: 0 }],
-      },
-    }
+    const mockData: any = makeMock()
     render(
       <DragDropContext onDragEnd={() => {}}>
-        <Board data={mockData.data} />
+        <Board data={mockData} />
       </DragDropContext>
     )
   })
 
   test('Ensure that board component be render with a correct type', () => {
-    const typeOptions = ['WAITING', 'IN_PROGRESS', 'DONE']
-    const mockData: any = {
-      data: {
-        type: 'DONE',
-        cards: [{ id: 1, type: 'string', name: 'string', quantity: 0 }],
-      },
-    }
+    const typeOptions = makeOptions()
+    const mockData: any = makeMock()
+
     render(
       <DragDropContext onDragEnd={() => {}}>
         {' '}
-        <Board data={mockData.data} />{' '}
+        <Board data={mockData} />{' '}
       </DragDropContext>
     )
-    expect(typeOptions).toContain(mockData.data.type)
+    expect(typeOptions).toContain(mockData.type)
   })
 })
