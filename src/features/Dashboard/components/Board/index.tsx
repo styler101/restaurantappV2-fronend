@@ -6,7 +6,7 @@ import { labels, options } from './labels'
 import * as S from './styles'
 
 export function Board(props: BoardType) {
-  const { type, cards, ...rest } = props
+  const { type, cards, ...rest } = props.data
   return (
     <S.Kanban {...rest}>
       <header>

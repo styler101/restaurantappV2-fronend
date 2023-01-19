@@ -22,18 +22,22 @@ export function Ui() {
         <S.Wrapper>
           <DragDropContext onDragEnd={() => {}}>
             <Board
-              type="WAITING"
-              cards={mock.data.filter((item) => item.type === 'WAITING')}
+              data={{
+                type: 'WAITING',
+                cards: mock.data.filter((item) => item.type === 'WAITING'),
+              }}
             />
             <Board
-              type="IN_PROGRESS"
-              cards={
-                mock.data.filter((item) => item.type === 'IN_PROGRESS') || []
-              }
+              data={{
+                type: 'IN_PROGRESS',
+                cards: mock.data.filter((item) => item.type === 'IN_PROGRESS'),
+              }}
             />
             <Board
-              type="DONE"
-              cards={mock.data.filter((item) => item.type === 'DONE') || []}
+              data={{
+                type: 'DONE',
+                cards: mock.data.filter((item) => item.type === 'DONE'),
+              }}
             />
           </DragDropContext>
         </S.Wrapper>
