@@ -2,7 +2,6 @@ import React from 'react'
 import { validEmail } from '@/utils/Validators'
 import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-
 import { Ui } from '@/features/Signin/ui'
 
 jest.mock('react-router-dom', () => ({
