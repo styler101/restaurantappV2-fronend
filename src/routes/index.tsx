@@ -7,6 +7,7 @@ import { Main } from '@/pages/Main'
 import { Dashboard } from '@/pages/Dashboard'
 import { Orders } from '@/pages/Orders'
 import { Error404 } from '@/pages/Error404'
+
 export function Routes() {
   return (
     <Switch>
