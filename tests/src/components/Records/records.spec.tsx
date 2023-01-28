@@ -43,4 +43,14 @@ describe('Records Component', () => {
       ])
     )
   })
+
+  test('Ensure that header not have a empty content on array props', () => {
+    const header = [{ label: 'any_label', content: 'any_content' }]
+    render(<Records header={header} />)
+    expect(header).toEqual(
+      expect.arrayContaining([
+        expect.not.objectContaining({ label: 'any_label', content: '' }),
+      ])
+    )
+  })
 })
