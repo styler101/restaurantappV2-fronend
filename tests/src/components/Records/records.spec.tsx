@@ -16,6 +16,7 @@ const makeSut = (): SutTypes => {
     header: makeHeader(),
   }
 }
+
 describe('Records Component', () => {
   test('Ensure that records component receive a header', () => {
     const { header } = makeSut()
