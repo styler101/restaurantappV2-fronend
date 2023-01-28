@@ -1,10 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { ComponentProps } from './interfaces'
 import homeLogo from '@/assets/img/svg/sidebar/logotext.svg'
 import profileLogo from '@/assets/img/svg/sidebar/profile.svg'
 import powerOff from '@/assets/img/svg/sidebar/poweroff.svg'
 import * as S from './styles'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 export function SideBar(props: ComponentProps) {
@@ -20,6 +20,7 @@ export function SideBar(props: ComponentProps) {
   function handleSignOut() {
     localStorage.removeItem('@waiterapp')
     toast.success('Obrigado, volte sempre!')
+    navigate('/')
   }
   return (
     <S.Container>
@@ -45,7 +46,7 @@ export function SideBar(props: ComponentProps) {
           </button>
         </S.ListItem>
         <S.ListItem>
-          <button>
+          <button onClick={handleSignOut}>
             <img src={powerOff} alt="profile-logo" />
             <span> Sair </span>
           </button>
