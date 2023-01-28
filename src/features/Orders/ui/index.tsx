@@ -1,5 +1,5 @@
 import React from 'react'
 
 export function Ui() {
-  return <h1> Records Screen </h1>
+  return <h1> Pedidos</h1>
 }

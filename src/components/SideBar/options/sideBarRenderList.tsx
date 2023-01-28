@@ -30,7 +30,7 @@ const options: SideBarProps[] = [
       ) : (
         <img src={historicLogo} alt="historic logo" />
       ),
-    pathName: '/home/records',
+    pathName: '/home/orders',
   },
 
   {

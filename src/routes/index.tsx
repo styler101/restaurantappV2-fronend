@@ -5,7 +5,7 @@ import { Signin } from '@/pages/Signin'
 import { Route as PrivateRoute } from '@/utils/PrivateRoute'
 import { Main } from '@/pages/Main'
 import { Dashboard } from '@/pages/Dashboard'
-import { Records } from '@/pages/Records'
+import { Orders } from '@/pages/Orders'
 import { Error404 } from '@/pages/Error404'
 export function Routes() {
   return (
@@ -20,7 +20,7 @@ export function Routes() {
           </PrivateRoute>
         }>
         <Route index element={<Dashboard />} />
-        <Route path="records" element={<Records />} />
+        <Route path="orders" element={<Orders />} />
       </Route>
     </Switch>
   )
