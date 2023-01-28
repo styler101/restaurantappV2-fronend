@@ -7,6 +7,8 @@ import * as S from './styles'
 
 export function Board(props: BoardType) {
   const { type, cards, ...rest } = props.data
+  const [filteredCards, setFilteredCards] = React.useState(cards)
+
   return (
     <S.Kanban {...rest}>
       <header>
@@ -16,10 +18,10 @@ export function Board(props: BoardType) {
           <span> 0 </span>
         </strong>
       </header>
-      <Droppable droppableId={String(options[type])}>
+      <Droppable droppableId={options[type]}>
         {(provided, snapshot) => (
           <S.CardsWrapper ref={provided.innerRef} {...provided.droppableProps}>
-            {cards.map((item, index) => (
+            {filteredCards.map((item, index) => (
               <React.Fragment key={item.id}>
                 <Draggable draggableId={String(item.id)} index={index}>
                   {(provided, snapshot) => (

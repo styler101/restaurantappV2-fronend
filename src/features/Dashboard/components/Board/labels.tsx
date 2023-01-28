@@ -26,7 +26,7 @@ export const labels: {
 }
 
 export const options = {
-  WAITING: 1,
-  IN_PROGRESS: 2,
-  DONE: 3,
+  WAITING: 'WAITING',
+  IN_PROGRESS: 'IN_PROGRESS',
+  DONE: 'DONE',
 }

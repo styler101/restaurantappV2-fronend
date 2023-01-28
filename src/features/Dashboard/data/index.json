@@ -11,6 +11,12 @@
       "id": 2,
       "name": "Mesa 1",
       "quantity": 1
+    },
+    {
+      "type": "IN_PROGRESS",
+      "id": 3,
+      "name": "Mesa 1",
+      "quantity": 1
     }
   ]
 }

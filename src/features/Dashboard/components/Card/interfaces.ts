@@ -13,6 +13,6 @@ export interface ComponentProps {
     type: string
     id: number
     name: string | null
-    quantity: number
+    quantity: number | null
   }
 }

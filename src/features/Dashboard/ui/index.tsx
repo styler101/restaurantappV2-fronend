@@ -1,13 +1,18 @@
-import React from 'react'
-import { DragDropContext } from 'react-beautiful-dnd'
+import React, { useCallback } from 'react'
+import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
 import { Board } from '../components/Board'
 import homeLogo from '@/assets/img/svg/header/customhome.svg'
-import mock from '../data/index.json'
+import { useDashboard } from '../context'
 import * as S from './styles'
 
 export function Ui() {
+  const { itens, setItens, filterItemsByType } = useDashboard()
+
+  function handleDrop(event: DropResult) {
+    if (!event.destination) return
+  }
   return (
     <S.Container>
       <Header
@@ -20,23 +25,23 @@ export function Ui() {
       />
       <Container>
         <S.Wrapper>
-          <DragDropContext onDragEnd={() => {}}>
+          <DragDropContext onDragEnd={handleDrop}>
             <Board
               data={{
                 type: 'WAITING',
-                cards: mock.data.filter((item) => item.type === 'WAITING'),
+                cards: filterItemsByType('WAITING'),
               }}
             />
             <Board
               data={{
                 type: 'IN_PROGRESS',
-                cards: mock.data.filter((item) => item.type === 'IN_PROGRESS'),
+                cards: filterItemsByType('IN_PROGRESS'),
               }}
             />
             <Board
               data={{
                 type: 'DONE',
-                cards: mock.data.filter((item) => item.type === 'DONE'),
+                cards: filterItemsByType('DONE'),
               }}
             />
           </DragDropContext>
