@@ -7,9 +7,13 @@ type SutTypes = {
   header: HeaderProps[]
 }
 
+const makeHeader = (): HeaderProps[] => [
+  { label: 'any_label', content: 'any_content' },
+]
+
 const makeSut = (): SutTypes => {
   return {
-    header: [{ label: 'any_label', content: 'any_content' }],
+    header: makeHeader(),
   }
 }
 describe('Records Component', () => {
