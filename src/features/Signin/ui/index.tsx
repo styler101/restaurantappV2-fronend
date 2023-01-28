@@ -101,7 +101,7 @@ export function Ui() {
         </FormGroup>
         <Button type="submit" disabled={!isValid || loading}>
           {loading ? (
-            <Spinner width="21" height="21" />
+            <Spinner width="2.1" height="2.1" />
           ) : (
             <span>Fazer Login </span>
           )}
