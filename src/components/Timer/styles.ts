@@ -16,7 +16,7 @@ export const Item = styled.div`
   height: 3.5rem;
   background-color: rgba(255, 255, 255, 0.1);
   font-family: 'Orbitron', arial;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   margin: 0 0.3rem;
   display: flex;
   flex-direction: column;

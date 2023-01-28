@@ -50,7 +50,7 @@ export const Wrapper = styled.div<WrapperProps>`
   button {
     height: 100%;
     border: 0;
-    height: 42px;
+    height: 4.2rem;
     background: transparent;
     position: absolute;
     right: 0;

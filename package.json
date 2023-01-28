@@ -10,8 +10,8 @@
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest  --watchAll --passWithNoTests",
-    "test:staged": "npm run test --passWithNoTests"
+    "test": "jest  --watchAll --passWithNoTests ",
+    "test:staged": "npm run test  --findRelatedTests"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",

@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid rgba(200, 200, 200, 0.4);
+  border-right: 0.1rem solid rgba(200, 200, 200, 0.4);
   background-color: ${(props) => props.theme.colors.white.light};
 `
 
@@ -33,8 +33,8 @@ export const ListItem = styled.li<ActiveItem>`
   cursor: pointer;
 
   svg {
-    width: 23px;
-    height: 23px;
+    width: 2.3rem;
+    height: 2.3rem;
     stroke: red;
     color: red;
   }
@@ -49,7 +49,7 @@ export const ListItem = styled.li<ActiveItem>`
 
   div {
     width: 2.6rem;
-    height: 2px;
+    height: 0.2rem;
     background-color: transparent;
     margin-top: 0.8rem;
   }

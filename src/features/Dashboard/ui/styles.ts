@@ -6,8 +6,8 @@ export const Container = styled.div`
 
 export const Icon = styled.img`
   stroke: #000;
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
 `
 
 export const Wrapper = styled.div`

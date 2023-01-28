@@ -5,8 +5,8 @@ export const Kanban = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
+  border: 0.1rem solid #cccccc;
+  border-radius: 0.4rem;
   padding: 1.6rem;
 
   header {
