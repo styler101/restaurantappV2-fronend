@@ -26,12 +26,18 @@ interface ActiveItem {
 
 export const ListItem = styled.li<ActiveItem>`
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  list-style: none;
+  margin-top: 0.8rem;
 
+  button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+  }
   svg {
     width: 2.3rem;
     height: 2.3rem;
