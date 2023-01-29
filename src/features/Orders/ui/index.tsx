@@ -2,6 +2,7 @@ import React from 'react'
 import history from '@/assets/img/svg/dashboard/historic.svg'
 import { Header } from '@/components/Header'
 import { Records } from '@/components/Records'
+import { RecordsContainer } from '@/components/RecordsContainer'
 
 export function Ui() {
   const header = [
@@ -22,7 +23,9 @@ export function Ui() {
           showTimer: true,
         }}
       />
-      <Records header={header} />
+      <RecordsContainer>
+        <Records header={header} />
+      </RecordsContainer>
     </React.Fragment>
   )
 }
