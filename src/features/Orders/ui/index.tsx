@@ -1,8 +1,6 @@
 import React from 'react'
-import history from '@/assets/img/svg/dashboard/historic.svg'
-import { Header } from '@/components/Header'
-import { Records } from '@/components/Records'
-import { RecordsContainer } from '@/components/RecordsContainer'
+import { Header, Records, RecordsContainer } from '@/components'
+import { historic } from '@/assets/img/svg/dashboard'
 
 export function Ui() {
   const header = [
@@ -19,7 +17,7 @@ export function Ui() {
         data={{
           title: 'Histórico',
           description: 'Visualize pedidos anteriores',
-          icon: <img src={history} alt="Order image" />,
+          icon: <img src={historic} alt="Order image" />,
           showTimer: true,
         }}
       />

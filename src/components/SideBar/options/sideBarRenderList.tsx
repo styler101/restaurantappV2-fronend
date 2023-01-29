@@ -1,23 +1,25 @@
 import React from 'react'
-import { IoMdNotificationsOutline } from 'react-icons/io'
-import homeLogo from '@/assets/img/svg/sidebar/home.svg'
-import redHomeLogo from '@/assets/img/svg/sidebar/redhome.svg'
-import historicLogo from '@/assets/img/svg/sidebar/historic.svg'
-import redHistoricLogo from '@/assets/img/svg/sidebar/customorder.svg'
-import redMenu from '@/assets/img/svg/sidebar/redmenu.svg'
-import redUsers from '@/assets/img/svg/sidebar/redusers.svg'
-import menuLogo from '@/assets/img/svg/sidebar/menu.svg'
-import usersLogo from '@/assets/img/svg/sidebar/group.svg'
 import { SideBarProps } from '../interfaces'
+import {
+  home,
+  redHome,
+  historic,
+  customOrder,
+  redmenu,
+  menu,
+  redusers,
+  group,
+} from '@/assets/img/svg/sidebar'
+import { IoMdNotificationsOutline } from 'react-icons/io'
 
 const options: SideBarProps[] = [
   {
     title: 'Home',
     icon: (isChecked: boolean) =>
       isChecked ? (
-        <img src={redHomeLogo} alt="home logo" />
+        <img src={redHome} alt="home logo" />
       ) : (
-        <img src={homeLogo} alt="home logo" />
+        <img src={home} alt="home logo" />
       ),
     pathName: '/home',
   },
@@ -26,9 +28,9 @@ const options: SideBarProps[] = [
     title: 'Historico',
     icon: (isChecked: boolean) =>
       isChecked ? (
-        <img src={redHistoricLogo} alt="historic logo" />
+        <img src={customOrder} alt="historic logo" />
       ) : (
-        <img src={historicLogo} alt="historic logo" />
+        <img src={historic} alt="historic logo" />
       ),
     pathName: '/home/orders',
   },
@@ -37,9 +39,9 @@ const options: SideBarProps[] = [
     title: 'Cardapio',
     icon: (isChecked: boolean) =>
       isChecked ? (
-        <img src={redMenu} alt="menu logo" />
+        <img src={redmenu} alt="menu logo" />
       ) : (
-        <img src={menuLogo} alt="menu historic" />
+        <img src={menu} alt="menu historic" />
       ),
     pathName: '/home/records',
   },
@@ -48,9 +50,9 @@ const options: SideBarProps[] = [
     title: 'Usuários',
     icon: (isChecked: boolean) =>
       isChecked ? (
-        <img src={redUsers} alt="users logo" />
+        <img src={redusers} alt="users logo" />
       ) : (
-        <img src={usersLogo} alt="users logo" />
+        <img src={group} alt="users logo" />
       ),
     pathName: '/home/records',
   },

@@ -1,19 +1,15 @@
 import React, { useCallback, useEffect } from 'react'
-
+import { Button, FormGroup, Input } from '@/components/Form'
+import { Spinner } from '@/components'
+import { SignInFields } from '../interfaces'
+import { signInRequest as request } from '../services'
+import schema, { defaultValues } from '../schema'
+import logo from '@/assets/img/svg/welcome.svg'
+import * as S from './styles'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import logo from '@/assets/img/svg/welcome.svg'
-
-import { Button, FormGroup, Input } from '@/components/Form'
-import { Spinner } from '@/components/Spinner'
-import { Splash } from '@/components/Splash'
-import { SignInFields } from '../interfaces'
-import { signInRequest as request } from '../services'
-
-import schema, { defaultValues } from '../schema'
-import * as S from './styles'
 import { useNavigate } from 'react-router-dom'
 
 export function Ui() {

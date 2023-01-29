@@ -1,6 +1,6 @@
 import React from 'react'
-import { BiSad } from 'react-icons/bi'
 import * as S from './styles'
+import { BiSad } from 'react-icons/bi'
 
 export function Error404() {
   return (

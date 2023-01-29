@@ -1,7 +1,7 @@
 import React from 'react'
+import * as S from './styles'
 import { ErrorsFieldsProps } from './interfaces'
 import { FiAlertCircle } from 'react-icons/fi'
-import * as S from './styles'
 
 export function ErrorField(props: ErrorsFieldsProps) {
   const { message } = props

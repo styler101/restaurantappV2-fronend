@@ -1,11 +1,10 @@
-import React, { useCallback } from 'react'
-import { DragDropContext, DropResult } from 'react-beautiful-dnd'
-import { Header } from '@/components/Header'
-import { Container } from '@/components/Container'
+import React from 'react'
 import { Board } from '../components/Board'
-import homeLogo from '@/assets/img/svg/header/customhome.svg'
+import { Header, Container } from '@/components'
 import { useDashboard } from '../context'
+import homeLogo from '@/assets/img/svg/header/customhome.svg'
 import * as S from './styles'
+import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 
 export function Ui() {
   const { itens, setItens, filterItemsByType } = useDashboard()

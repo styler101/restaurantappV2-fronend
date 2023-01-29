@@ -1,6 +1,6 @@
 import React from 'react'
-import { Timer } from '@/components/Timer'
 import { HeaderProps } from './interfaces'
+import { Timer } from '@/components/Timer'
 import * as S from './styles'
 
 export function Header(props: HeaderProps) {

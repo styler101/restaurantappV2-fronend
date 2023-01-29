@@ -1,9 +1,9 @@
 import React from 'react'
-import { Droppable, Draggable } from 'react-beautiful-dnd'
-import { Card } from '../Card'
 import { BoardType } from './interface'
 import { labels, options } from './labels'
+import { Card } from '../Card'
 import * as S from './styles'
+import { Droppable, Draggable } from 'react-beautiful-dnd'
 
 export function Board(props: BoardType) {
   const { type, cards, ...rest } = props.data

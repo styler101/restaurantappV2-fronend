@@ -1,15 +1,7 @@
-import React, { PropsWithChildren, SetStateAction, useContext } from 'react'
+import React, { useContext } from 'react'
+import { ComponentProps, ContextProps } from './interfaces'
 import { ItemProps } from '../interfaces'
 import mock from '../data/index.json'
-
-type StateAction<T> = React.Dispatch<SetStateAction<T>>
-
-type ComponentProps = PropsWithChildren
-interface ContextProps {
-  itens: ItemProps[]
-  setItens: StateAction<ItemProps[]>
-  filterItemsByType: (type: string) => ItemProps[]
-}
 
 export const Context = React.createContext({} as ContextProps)
 

@@ -1,7 +1,5 @@
 import React from 'react'
-import timeLogo from '@/assets/img/svg/dashboard/clock.svg'
-import chef from '@/assets/img/svg/dashboard/cozinhando.svg'
-import check from '@/assets/img/svg/dashboard/check.svg'
+import { clock, cozinhando as chief, check } from '@/assets/img/svg/dashboard'
 
 export const labels: {
   [key: string]: {
@@ -11,12 +9,12 @@ export const labels: {
 } = {
   WAITING: {
     name: 'Fila de Espera',
-    icon: <img src={timeLogo} alt="timer icon" />,
+    icon: <img src={clock} alt="timer icon" />,
   },
 
   IN_PROGRESS: {
     name: 'Em Produção',
-    icon: <img src={chef} alt="chief icon" />,
+    icon: <img src={chief} alt="chief icon" />,
   },
 
   DONE: {

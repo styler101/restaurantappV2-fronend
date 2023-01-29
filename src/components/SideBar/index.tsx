@@ -1,9 +1,7 @@
 import React from 'react'
-import { ComponentProps } from './interfaces'
-import homeLogo from '@/assets/img/svg/sidebar/logotext.svg'
-import profileLogo from '@/assets/img/svg/sidebar/profile.svg'
-import powerOff from '@/assets/img/svg/sidebar/poweroff.svg'
 import * as S from './styles'
+import { ComponentProps } from './interfaces'
+import { home, profile, poweroff } from '@/assets/img/svg/sidebar'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
@@ -25,7 +23,7 @@ export function SideBar(props: ComponentProps) {
   return (
     <S.Container>
       <header>
-        <img src={homeLogo} alt="logo text" />
+        <img src={home} alt="logo text" />
       </header>
       <S.List>
         {options.map((item, index) => (
@@ -41,13 +39,13 @@ export function SideBar(props: ComponentProps) {
       <S.Footer>
         <S.ListItem>
           <button>
-            <img src={profileLogo} alt="profile-logo" />
+            <img src={profile} alt="profile-logo" />
             <span> Perfil</span>
           </button>
         </S.ListItem>
         <S.ListItem>
           <button onClick={handleSignOut}>
-            <img src={powerOff} alt="profile-logo" />
+            <img src={poweroff} alt="profile-logo" />
             <span> Sair </span>
           </button>
         </S.ListItem>

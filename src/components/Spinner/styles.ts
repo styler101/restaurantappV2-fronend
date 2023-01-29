@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { SpinnerProps as ContainerProps } from './interfaces'
 import { Rotate } from '@/shared/animations'
+import { SpinnerProps as ContainerProps } from './interfaces'
 
 export const Container = styled.div<ContainerProps>`
   width: ${(props) => (props.width ? `${props.width}rem` : '1.6rem')};
