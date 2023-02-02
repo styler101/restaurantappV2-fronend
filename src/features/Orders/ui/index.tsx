@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Records, RecordsContainer } from '@/components'
+import { Header, Records, RecordsContainer, Title } from '@/components'
 import { historic } from '@/assets/img/svg/dashboard'
 
 export function Ui() {
@@ -22,6 +22,7 @@ export function Ui() {
         }}
       />
       <RecordsContainer>
+        <Title data={{ title: 'Pedidos', quantity: 8 }} />
         <Records header={header} />
       </RecordsContainer>
     </React.Fragment>
