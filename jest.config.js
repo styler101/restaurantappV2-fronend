@@ -4,7 +4,7 @@ export default {
   modulePaths: ['<rootDir>/src'],
   roots: ['<rootDir>/src', '<rootDir>/tests'],
   collectCoverageFrom: [
-    '<rootDir>/tests/**/*.{ts,tsx}',
+    '<rootDir>/tests/src/**/**/*.{ts,tsx}',
     '!<rootDir>src/main.tsx',
   ],
   clearMocks: true,

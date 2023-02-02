@@ -1,8 +1,8 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import { SideBar } from '@/components/SideBar/index'
 import { options } from '@/components/SideBar/options/sideBarRenderList'
+import { SideBar } from '@/components'
 import * as S from './styles'
+import { Outlet } from 'react-router-dom'
 
 export function Ui() {
   return (

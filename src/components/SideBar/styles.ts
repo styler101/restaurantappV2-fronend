@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid rgba(200, 200, 200, 0.4);
+  border-right: 0.1rem solid rgba(200, 200, 200, 0.4);
   background-color: ${(props) => props.theme.colors.white.light};
 `
 
@@ -26,29 +26,38 @@ interface ActiveItem {
 
 export const ListItem = styled.li<ActiveItem>`
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  list-style: none;
+  margin-top: 0.8rem;
 
+  button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+  }
   svg {
-    width: 23px;
-    height: 23px;
+    width: 2.3rem;
+    height: 2.3rem;
     stroke: red;
     color: red;
   }
 
   span {
     display: block;
-    margin-top: 0.8rem;
+    padding: 0.4rem 0;
     font-size: 1.4rem;
     line-height: 140%;
     color: ${(props) => props.theme.colors.secundary[600]};
   }
 
   div {
-    margin-top: 0.4rem;
+    width: 2.6rem;
+    height: 0.2rem;
+    background-color: transparent;
+    margin-top: 0.8rem;
   }
 
   ${(props) =>
@@ -59,8 +68,6 @@ export const ListItem = styled.li<ActiveItem>`
       }
 
       div {
-        width: 2.6rem;
-        height: 2px;
         background-color: ${(props) => props.theme.colors?.primary[400]};
         transition: all 1.5s ease-out;
       }

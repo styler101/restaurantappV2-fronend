@@ -1,17 +1,21 @@
 import React from 'react'
 import { HeaderProps } from './interfaces'
+import { Timer } from '@/components/Timer'
 import * as S from './styles'
 
 export function Header(props: HeaderProps) {
-  const { title, icon, description, extraTitleContent } = props.data
+  const { title, icon, description, extraTitleContent, showTimer } = props.data
   return (
     <S.Container>
       <header>
-        <div>
+        <S.LeftContent>
           {icon}
           <h2> {title} </h2>
-        </div>
-        {extraTitleContent}
+        </S.LeftContent>
+        <S.RightContent>
+          {showTimer && <Timer />}
+          {extraTitleContent}
+        </S.RightContent>
       </header>
       <p> {description}</p>
     </S.Container>

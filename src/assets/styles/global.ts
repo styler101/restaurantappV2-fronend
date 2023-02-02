@@ -38,4 +38,17 @@ ul{
   list-style: none;
 }
 
+::-webkit-scrollbar{
+  width:0.5rem;
+}
+
+::-webkit-scrollbar-track{
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#cccccccc;
+  border-radius: 0.4rem;
+}
+
 `

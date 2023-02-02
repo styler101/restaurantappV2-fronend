@@ -12,7 +12,7 @@ export const Container = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   background-color: ${(props) => props.theme.colors?.primary[400]};
   font-weight: 700;
   color: #fff;

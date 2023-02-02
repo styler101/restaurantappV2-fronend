@@ -1,10 +1,9 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { ComponentProps } from './interfaces'
-import homeLogo from '@/assets/img/svg/logotext.svg'
-import profileLogo from '@/assets/img/svg/profile.svg'
-import powerOff from '@/assets/img/svg/poweroff.svg'
 import * as S from './styles'
+import { ComponentProps } from './interfaces'
+import { home, profile, poweroff } from '@/assets/img/svg/sidebar'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export function SideBar(props: ComponentProps) {
   const { options } = props
@@ -15,31 +14,40 @@ export function SideBar(props: ComponentProps) {
     navigate(pathName)
     setActiveItem(index)
   }
+
+  function handleSignOut() {
+    localStorage.removeItem('@waiterapp')
+    toast.success('Obrigado, volte sempre!')
+    navigate('/')
+  }
   return (
     <S.Container>
       <header>
-        <img src={homeLogo} alt="logo text" />
+        <img src={home} alt="logo text" />
       </header>
       <S.List>
         {options.map((item, index) => (
-          <S.ListItem
-            key={index}
-            active={activeItem === index}
-            onClick={() => handleActiveItem(index, item.pathName)}>
-            {item.icon(activeItem === index)}
-            <span> {item.title}</span>
-            <div />
+          <S.ListItem key={index} active={activeItem === index}>
+            <button onClick={() => handleActiveItem(index, item.pathName)}>
+              {item.icon(activeItem === index)}
+              <span> {item.title}</span>
+              <div />
+            </button>
           </S.ListItem>
         ))}
       </S.List>
       <S.Footer>
         <S.ListItem>
-          <img src={profileLogo} alt="profile-logo" />
-          <span> Perfil</span>
+          <button>
+            <img src={profile} alt="profile-logo" />
+            <span> Perfil</span>
+          </button>
         </S.ListItem>
         <S.ListItem>
-          <img src={powerOff} alt="profile-logo" />
-          <span> Sair </span>
+          <button onClick={handleSignOut}>
+            <img src={poweroff} alt="profile-logo" />
+            <span> Sair </span>
+          </button>
         </S.ListItem>
       </S.Footer>
     </S.Container>

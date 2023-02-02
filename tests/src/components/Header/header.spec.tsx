@@ -8,6 +8,7 @@ describe('Header Component', () => {
       title: '',
       description: 'any_description',
       icon: 'fake_icon',
+      showTimer: true,
     }
     render(<Header data={fakeProps} />)
   })
@@ -17,6 +18,8 @@ describe('Header Component', () => {
       title: 'anyTitle',
       description: 'any_description',
       icon: 'fake_icon',
+
+      showTimer: true,
     }
     render(<Header data={fakeProps} />)
 
@@ -28,6 +31,7 @@ describe('Header Component', () => {
       title: 'any_title',
       description: '',
       icon: 'fake_icon',
+      showTimer: true,
     }
     render(<Header data={fakeProps} />)
   })
@@ -37,6 +41,7 @@ describe('Header Component', () => {
       title: 'any_title',
       description: 'any_description',
       icon: 'fake_icon',
+      showTimer: true,
     }
     render(<Header data={fakeProps} />)
     expect(fakeProps.description).toEqual('any_description')
@@ -47,6 +52,7 @@ describe('Header Component', () => {
       title: 'any_title',
       description: 'any_description',
       icon: <h1> Any Icon</h1>,
+      showTimer: true,
     }
     render(<Header data={fakeProps} />)
     expect(fakeProps.icon).toEqual(<h1> Any Icon</h1>)
