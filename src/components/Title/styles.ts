@@ -18,5 +18,6 @@ export const Title = styled.h1`
     justify-content: center;
     font-weight: 400;
     font-size: 1.6rem;
+    border-radius: 0.4rem;
   }
 `

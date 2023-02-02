@@ -6,9 +6,11 @@ export function TableHeader(props: ComponentProps) {
   const { header } = props
   return (
     <S.Container>
-      {header.map((item, index) => (
-        <td key={index}> {item.content}</td>
-      ))}
+      <tr>
+        {header.map((item, index) => (
+          <th key={index}> {item.content}</th>
+        ))}
+      </tr>
     </S.Container>
   )
 }
