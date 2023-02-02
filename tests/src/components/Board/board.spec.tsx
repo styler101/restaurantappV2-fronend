@@ -3,6 +3,7 @@ import { render } from '@testing-library/react'
 import { DragDropContext } from 'react-beautiful-dnd'
 import { Board } from '@/features/Dashboard/components/Board'
 
+jest.mock('@/features/Dashboard/components/Board')
 const makeOptions = () => ['WAITING', 'IN_PROGRESS', 'DONE']
 
 const makeMock = () => ({
@@ -26,8 +27,7 @@ describe('Board Component', () => {
 
     render(
       <DragDropContext onDragEnd={() => {}}>
-        {' '}
-        <Board data={mockData} />{' '}
+        <Board data={mockData} />
       </DragDropContext>
     )
     expect(typeOptions).toContain(mockData.type)
