@@ -36,4 +36,11 @@ describe('Title Component', () => {
     const heading = screen.getByRole('heading', { level: 1 })
     expect(heading).toBeInTheDocument()
   })
+
+  test('ensure that title component has a span', () => {
+    const { sut } = makeSut()
+    render(<Title data={sut.data} />)
+    const span = screen.getByText(/[0-9]/i)
+    expect(span).toBeInTheDocument()
+  })
 })
